@@ -13,18 +13,20 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @AllArgsConstructor
-public class MemberServiceImpl implements MemberService{
+public class MemberServiceImpl implements MemberService {
+
+    private static final String CLASS = MemberServiceImpl.class.getSimpleName();
 
     private static final MemberMapper mapper = Mappers.getMapper(MemberMapper.class);
 
     private MemberRepository repository;
 
     @Override
-    @Cacheable(value = "myCache", key = "#email", unless = "#result == null")
     public MemberDto getByEmail(String email) {
-        Member member = repository.getOneByEmail(email).orElse(null);
+        Member member = repository.getOneByEmail(email);
+        log.info("{} getByEmail取出 Member: {}", CLASS, member);
 
-        if(member == null) return null;
+        if (member == null) return null;
 
         return mapper.toMemberDto(member);
     }

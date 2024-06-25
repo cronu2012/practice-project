@@ -4,13 +4,13 @@ import jakarta.persistence.Column;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
-@Getter
-@Setter
-public class MemberDto {
+public class MemberDto implements Serializable {
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
     private String email;

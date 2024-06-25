@@ -9,11 +9,11 @@ import java.util.Optional;
 
 public interface MemberRepository {
 
-    Optional<Member> getOneById(Long id);
+    Member getOneById(Long id);
 
-    Optional<Member> getOneByEmail(String email);
+    Member getOneByEmail(String email);
 
-    Optional<Member> getOneByPhone(String phone);
+    Member getOneByPhone(String phone);
 
     List<Member> getAll();
 }

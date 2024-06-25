@@ -5,7 +5,7 @@ import com.example.practice_project.dto.MemberDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
-@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
 public interface MemberMapper {
 
     MemberDto toMemberDto(Member source);
