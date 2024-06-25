@@ -25,9 +25,8 @@ public class MemberRepositoryImpl implements MemberRepository{
     }
 
     @Override
-    @Cacheable(value = "Member", key = "#email", unless = "#result == null")
+//    @Cacheable(value = "Email", key = "#email", unless = "#result == null")
     public Member getOneByEmail(String email) {
-        log.info("{} getOneByEmail 執行未取得緩存",CLASS);
         return repository.findByEmailAndStatusNot(email, 0).orElse(null);
     }
 

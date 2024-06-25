@@ -1,3 +1,22 @@
+CREATE TABLE t_bank (
+  id bigint NOT NULL AUTO_INCREMENT,
+  create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  create_by varchar(50) NOT NULL,
+  update_by varchar(50) NOT NULL,
+  bank_code varchar(20) NOT NULL,
+  bank_name varchar(100) NOT NULL,
+  status tinyint NOT NULL DEFAULT 1,
+  PRIMARY KEY (id),
+  UNIQUE KEY unique_bank_code (bank_code),
+  UNIQUE KEY unique_bank_name (bank_name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+
+INSERT INTO t_bank (create_by, update_by, bank_code, bank_name)
+    VALUES ('galen', 'galen', '004', '台灣銀行');
+INSERT INTO t_bank (create_by, update_by, bank_code, bank_name)
+    VALUES ('galen', 'galen', '005', '土地銀行');
+
 CREATE TABLE t_member (
     id BIGINT NOT NULL AUTO_INCREMENT,
     create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -16,6 +35,5 @@ CREATE TABLE t_member (
 
 INSERT INTO t_member (email, password, member_name, age,sp_email,phone)
     VALUES ('test01@gmail.com', '123456' , 'galen', 18, null,'0910123333');
-
 INSERT INTO t_member (email, password, member_name, age,sp_email,phone)
     VALUES ('test02@gmail.com', '123456' , 'steven', 16,'test03@gmail.com','0978633633');
