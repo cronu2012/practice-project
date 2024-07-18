@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,5 +36,20 @@ public class MemberController {
             return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).build();
         }
 
+    }
+
+    @GetMapping("id")
+    public ResponseEntity<?> get(Long id){
+        try {
+            MemberDto memberDto = memberService.getById(id);
+            if (memberDto == null) {
+                log.info("{} 查無資料，id:{}", CLASS, id);
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
+            return ResponseEntity.ok().body(memberDto);
+        } catch (Exception e) {
+            log.error("{} 處理錯誤: {}", CLASS, e.getMessage());
+            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).build();
+        }
     }
 }

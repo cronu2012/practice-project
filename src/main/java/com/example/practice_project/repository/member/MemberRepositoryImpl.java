@@ -1,14 +1,14 @@
 package com.example.practice_project.repository.member;
 
-import com.example.practice_project.domain.Member;
+import com.example.practice_project.domain.bank.Member;
+import com.example.practice_project.domain.bank.MemberProjection;
+import com.example.practice_project.domain.bank.MemberRecord;
 import com.example.practice_project.jpa.MemberJpaRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @Repository
@@ -38,5 +38,10 @@ public class MemberRepositoryImpl implements MemberRepository{
     @Override
     public List<Member> getAll() {
         return repository.findAllByStatusNot(0);
+    }
+
+    @Override
+    public MemberRecord getRecordById(Long id) {
+        return repository.findRecordByIdAndStatusNot(id, 0).orElse(null);
     }
 }

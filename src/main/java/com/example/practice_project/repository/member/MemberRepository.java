@@ -1,10 +1,10 @@
 package com.example.practice_project.repository.member;
 
-import com.example.practice_project.domain.Member;
-import org.springframework.stereotype.Repository;
+import com.example.practice_project.domain.bank.Member;
+import com.example.practice_project.domain.bank.MemberProjection;
+import com.example.practice_project.domain.bank.MemberRecord;
 
 import java.util.List;
-import java.util.Optional;
 
 
 public interface MemberRepository {
@@ -16,4 +16,8 @@ public interface MemberRepository {
     Member getOneByPhone(String phone);
 
     List<Member> getAll();
+
+    MemberRecord getRecordById(Long id);
+
+
 }

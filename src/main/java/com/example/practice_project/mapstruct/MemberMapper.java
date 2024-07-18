@@ -1,6 +1,6 @@
 package com.example.practice_project.mapstruct;
 
-import com.example.practice_project.domain.Member;
+import com.example.practice_project.domain.bank.Member;
 import com.example.practice_project.dto.MemberDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

@@ -7,4 +7,5 @@ public interface MemberService {
 
     MemberDto getByEmail(String email);
 
+    MemberDto getById(Long id);
 }
