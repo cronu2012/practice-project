@@ -1,4 +1,4 @@
-package com.example.practice_project.domain;
+package com.example.practice_project.domain.bank;
 
 import jakarta.persistence.*;
 import lombok.Data;

@@ -1,8 +1,7 @@
 package com.example.practice_project.service.member;
 
-import com.example.practice_project.domain.bank.Member;
-import com.example.practice_project.domain.bank.MemberProjection;
-import com.example.practice_project.domain.bank.MemberRecord;
+import com.example.practice_project.domain.member.Member;
+import com.example.practice_project.domain.member.MemberRecord;
 import com.example.practice_project.dto.MemberDto;
 import com.example.practice_project.mapstruct.MemberMapper;
 import com.example.practice_project.repository.member.MemberRepository;

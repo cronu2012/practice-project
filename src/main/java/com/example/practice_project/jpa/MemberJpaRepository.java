@@ -1,8 +1,7 @@
 package com.example.practice_project.jpa;
 
-import com.example.practice_project.domain.bank.Member;
-import com.example.practice_project.domain.bank.MemberProjection;
-import com.example.practice_project.domain.bank.MemberRecord;
+import com.example.practice_project.domain.member.Member;
+import com.example.practice_project.domain.member.MemberRecord;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

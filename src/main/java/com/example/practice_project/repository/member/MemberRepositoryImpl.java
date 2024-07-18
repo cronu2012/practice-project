@@ -1,8 +1,7 @@
 package com.example.practice_project.repository.member;
 
-import com.example.practice_project.domain.bank.Member;
-import com.example.practice_project.domain.bank.MemberProjection;
-import com.example.practice_project.domain.bank.MemberRecord;
+import com.example.practice_project.domain.member.Member;
+import com.example.practice_project.domain.member.MemberRecord;
 import com.example.practice_project.jpa.MemberJpaRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
